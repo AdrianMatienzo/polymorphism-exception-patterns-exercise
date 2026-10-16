@@ -253,7 +253,7 @@ public class ParcelDeliverySystem{
     }
 
     public String promptTrackingNumber(){
-        return VALIDATION.getValidatedStringInput("Enter Parcel Tracking Number: ", "Tracking number cannot be empty and must be alphanumeric, \"ABC\" followed by 4 digits (e.g., ABC1234)", "^[A-Ca-c]{3}\\d{4}$");
+        return VALIDATION.getValidatedStringInput("Enter Parcel Tracking Number: ", "Tracking number cannot be empty and must be alphanumeric, \"ABC\" followed by 4 digits (e.g., ABC1234)", "(?i)^ABC\\d{4}$");
     }
 
     public String promptnewTrackingNumber(){
@@ -261,7 +261,7 @@ public class ParcelDeliverySystem{
         boolean validTrackingNumber = false;
 
         while (!validTrackingNumber){
-            trackingNumber = VALIDATION.getValidatedStringInput("Enter tracking number: ", "Tracking number cannot be empty and must be alphanumeric, \"ABC\" followed by 4 digits (e.g., ABC1234)", "^[A-Ca-c]{3}\\d{4}$");
+            trackingNumber = VALIDATION.getValidatedStringInput("Enter tracking number: ", "Tracking number cannot be empty and must be alphanumeric, \"ABC\" followed by 4 digits (e.g., ABC1234)", "(?i)^ABC\\d{4}$");
 
             if (MANAGER.isDuplicateParcelTrackingNumber(trackingNumber)){
                 System.out.println("Duplicate Tracking Number! Please enter a unique tracking number.");

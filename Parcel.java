@@ -31,12 +31,7 @@ public abstract class Parcel {
     }
 
     public String getDeliveryService(){
-        try {
-            return deliveryService.getType();
-        } catch (NullPointerException e){
-            System.out.println("Error: No delivery service has been assigned.");
-            return null;
-        }
+        return deliveryService.getType();
     }
 
     public double getDeliveryFee(){

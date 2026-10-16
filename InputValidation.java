@@ -17,7 +17,7 @@ public class InputValidation {
 
         while (running){
             System.out.print(prompt);
-            userInput = sc.nextLine();
+            userInput = sc.nextLine().trim();
 
             if (userInput.matches(regexPattern)){
                 break;
@@ -50,58 +50,6 @@ public class InputValidation {
                 System.out.println(errorMessage);
             } catch (NumberFormatException e){
                 System.out.println("Please enter a valid integer number.");
-            }
-        }
-        return value;
-    }
-
-    public int getValidatedInteger(String prompt, String errorMessage){
-        int value = 0;
-        boolean running = true;
-
-        while (running){
-            System.out.print(prompt);
-            String userInput = sc.nextLine().trim();
-
-            if (!userInput.matches("-?(0|[1-9]\\d*)")) { 
-                System.out.println(errorMessage); 
-                continue; 
-            }
-
-            try {
-                value = Integer.parseInt(userInput);
-                if (value > 0){
-                    break;
-                }
-                System.out.println(errorMessage);
-            } catch (NumberFormatException e){
-                System.out.println("Please enter a valid integer number.");
-            }
-        }
-        return value;
-    }
-
-    public double getValidatedDouble(String prompt, String errorMessage){
-        double value = 0;
-        boolean running = true;
-
-        while (running){
-            System.out.print(prompt);
-            String userInput = sc.nextLine().trim();
-
-            if (!userInput.matches("-?(0|[1-9]\\d*)(\\.\\d+)?")) {
-                System.out.println(errorMessage);
-                continue;
-            }
-
-            try {
-                value = Double.parseDouble(userInput);
-                if (value > 0){
-                    break;
-                }
-                System.out.println(errorMessage);
-            } catch (NumberFormatException e){
-                System.out.println("Please enter a valid double number.");
             }
         }
         return value;

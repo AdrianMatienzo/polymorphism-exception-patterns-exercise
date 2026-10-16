@@ -64,7 +64,7 @@ public class ParcelDeliveryManager {
     }
 
     public boolean checkIfSameDeliveryService(Parcel parcel, DeliveryService newDeliveryService, String message){
-        if (newDeliveryService.getType() == parcel.getDeliveryService()){
+        if (newDeliveryService.getType().equalsIgnoreCase(parcel.getDeliveryService())){
             System.out.println(message);
             return true;
         }

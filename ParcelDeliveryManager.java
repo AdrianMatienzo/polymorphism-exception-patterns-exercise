@@ -56,7 +56,7 @@ public class ParcelDeliveryManager {
     }
 
     public boolean checkSameDayDeliveryServiceAvailability(Parcel parcel){
-        if (parcel.getWeight() > 10){
+        if (parcel.getChargeableWeight() > 10){
             System.out.println("Same Day delivery is only for parcels up to 10 kg! Try again.");
             return false;
         }

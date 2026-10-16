@@ -7,7 +7,7 @@ public class ParcelDeliverySystem{
 
         while(isRunning){
             System.out.println("=======================================================");
-            System.out.println("                  Parcel Delivery System               ");
+            System.out.println("                 Parcel Delivery System                ");
             System.out.println("=======================================================");
 
             System.out.println("1. Add Parcel");
@@ -279,15 +279,15 @@ public class ParcelDeliverySystem{
     }
 
     public double promptDocumentWeight(){
-        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must not exceed 0.5 kg.", 0.5);
+        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must be greater than 0 and not exceed 0.5 kg.", 0.5);
     }
 
     public double promptBoxWeight(){
-        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must not exceed 50 kg.", 50);
+        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must be greater than 0 and not exceed 50 kg.", 50);
     }
 
     public double promptFragileBoxWeight(){
-        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must not exceed 30kg.", 30);
+        return VALIDATION.getValidatedDoubleMax("Enter weight (kg): ","Invalid input! Weight must be greater than 0 and not exceed 30kg.", 30);
     }
 
     public int promptNumPages(){
@@ -295,15 +295,15 @@ public class ParcelDeliverySystem{
     }
 
     public int promptBoxLength(){
-        return VALIDATION.getValidatedInteger("Enter Box Length: ", "Invalid input! Box length must be greater than 0.");
+        return VALIDATION.getValidatedIntegerMinMax("Enter Box Length (Max. 150 cm): ", "Invalid input! Box length must be between 1 and 150 cm.", 1, 150);
     }
 
     public int promptBoxWidth(){
-        return VALIDATION.getValidatedInteger("Enter Box Width: ", "Invalid input! Box width must be greater than 0.");
+        return VALIDATION.getValidatedIntegerMinMax("Enter Box Width (Max. 150 cm): ", "Invalid input! Box width must be between 1 and 150 cm.", 1, 150);
     }
 
     public int promptBoxHeight(){
-        return VALIDATION.getValidatedInteger("Enter Box Height: ", "Invalid input! Box height must be greater than 0.");
+        return VALIDATION.getValidatedIntegerMinMax("Enter Box Height (Max. 150 cm): ", "Invalid input! Box height must be between 1 and 150 cm.", 1, 150);
     }
 
     public String promptHandlingNote(){

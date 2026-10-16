@@ -101,7 +101,7 @@ public class InputValidation {
                 }
                 System.out.println(errorMessage);
             } catch (NumberFormatException e){
-                System.out.println(errorMessage);
+                System.out.println("Please enter a valid double number.");
             }
         }
         return value;
@@ -127,7 +127,7 @@ public class InputValidation {
                 }
                 System.out.println(errorMessage);
             } catch (NumberFormatException e){
-                System.out.println(errorMessage);
+                System.out.println("Please enter a valid double number.");
             }
         }
         return value;
